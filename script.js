@@ -6,7 +6,7 @@ const more = document.getElementById("more");
 const apiURL = "https://api.lyrics.ovh";
 
 // Search by song or artist
-async function searchSongs(term) {
+async const searchSongs =(term) =>{
   const res = await fetch(`${apiURL}/suggest/${term}`);
   const data = await res.json();
 
@@ -14,7 +14,7 @@ async function searchSongs(term) {
 }
 
 // Show song and artist in DOM
-function showData(data) {
+const showData=(data)=> {
   result.innerHTML = `
     <ul class="songs">
       ${data.data
@@ -47,7 +47,7 @@ function showData(data) {
 }
 
 // Get prev and next songs
-async function getMoreSongs(url) {
+async const  getMoreSongs=(url) =>{
   const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
   const data = await res.json();
 
@@ -55,7 +55,7 @@ async function getMoreSongs(url) {
 }
 
 // Get lyrics for song
-async function getLyrics(artist, songTitle) {
+async const getLyrics=(artist, songTitle) =>{
   const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
   const data = await res.json();
 
